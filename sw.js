@@ -2,10 +2,15 @@
 /* Service Worker for offline caching */
 const CACHE_NAME = 'posplaytime-v4';
 const ASSETS = [
-  '/', '/index.html', '/styles.css', '/app.js', '/manifest.webmanifest',
-  '/admin.html', '/admin.js',
-  '/assets/icons/icon-192.png', '/assets/icons/icon-512.png',
-  '/assets/sounds/cha-ching.mp3'
+  'index.html',
+  'styles.css',
+  'app.js',
+  'manifest.webmanifest',
+  'admin.html',
+  'admin.js',
+  'assets/icons/icon-192.png',
+  'assets/icons/icon-512.png',
+  'assets/sounds/cha-ching.mp3'
 ];
 
 self.addEventListener('install', (event) => {

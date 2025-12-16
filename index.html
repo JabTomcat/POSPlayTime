@@ -12,28 +12,28 @@
   <meta name="theme-color" content="#3b82f6" />
 
   <!-- PWA manifest & icons -->
-  <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="icon" href="/assets/icons/icon-192.png" sizes="192x192" type="image/png" />
-  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icons/icon-192.png" sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 
   <!-- App JS -->
-  <script defer src="/app.js"></script>
+  <script defer src="app.js"></script>
 
   <!-- Service worker registration -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch(console.error);
+        navigator.serviceWorker.register('sw.js').catch(console.error);
       });
     }
   </script>
 </head>
 <body>
   <!-- Sound for cha-ching (must be triggered by user gesture) -->
-  <audio id="paySound" src="/assets/sounds/cha-ching.mp3" preload="auto"></audio>
+  <audio id="paySound" src="assets/sounds/cha-ching.mp3" preload="auto"></audio>
 
   <header class="app-header">
     <h1 aria-label="POS PlayTime">🧸 POS PlayTime</h1>
