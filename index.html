@@ -1,0 +1,109 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>POS PlayTime</title>
+
+  <!-- iPad app-like experience -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#3b82f6" />
+
+  <!-- PWA manifest & icons -->
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/assets/icons/icon-192.png" sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- App JS -->
+  <script defer src="/app.js"></script>
+
+  <!-- Service worker registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(console.error);
+      });
+    }
+  </script>
+</head>
+<body>
+  <!-- Sound for cha-ching (must be triggered by user gesture) -->
+  <audio id="paySound" src="/assets/sounds/cha-ching.mp3" preload="auto"></audio>
+
+  <header class="app-header">
+    <h1 aria-label="POS PlayTime">🧸 POS PlayTime</h1>
+    <div class="header-actions">
+      <button id="viewHistoryBtn" class="secondary">📜 History</button>
+      <button id="adminBtn" class="secondary">⚙️ Admin</button>
+    </div>
+  </header>
+
+  <!-- Category Tabs -->
+  <nav id="categoryTabs" class="tabs" aria-label="Categories"></nav>
+
+  <main class="layout">
+    <!-- Item Grid -->
+    <section aria-label="Items" class="grid" id="itemGrid"></section>
+
+    <!-- Cart / Summary -->
+    <aside class="cart" aria-label="Order summary">
+      <h2>🛒 Order</h2>
+      <ul id="cartList" class="cart-list" aria-live="polite"></ul>
+
+      <div class="totals">
+        <div class="row"><span>Subtotal:</span><strong id="subtotal">$0.00</strong></div>
+        <div class="row"><span>Tax (5%):</span><strong id="tax">$0.00</strong></div>
+        <div class="row total"><span>Total:</span><strong id="total">$0.00</strong></div>
+      </div>
+
+      <div class="cart-actions">
+        <button id="clearCartBtn" class="secondary">Clear</button>
+        <button id="payBtn" class="primary">Paid ✅</button>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Confetti -->
+  <div id="confettiContainer" aria-hidden="true"></div>
+
+  <!-- History Modal -->
+  <dialog id="historyDialog">
+    <form method="dialog" class="history">
+      <header>
+        <h3>Order History</h3>
+      </header>
+      <div id="historyList" class="history-list"></div>
+      <footer>
+        <button id="exportBtn" class="secondary" type="button">Export CSV</button>
+        <button id="clearHistoryBtn" class="danger" type="button">Clear History</button>
+        <button id="closeHistoryBtn" class="primary">Close</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Admin passcode dialog -->
+  <dialog id="adminDialog">
+    <form method="dialog" class="admin-passcode">
+      <h3>🔐 Admin Access</h3>
+      <p>Enter passcode to unlock Admin.</p>
+      <input
+        id="passcodeInput"
+        type="password"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        maxlength="6"
+        placeholder="••••"
+        aria-label="Admin passcode" />
+      <div class="cart-actions">
+        <button id="cancelAdminBtn" class="secondary" type="button">Cancel</button>
+        <button id="submitAdminBtn" class="primary" type="button">Unlock</button>
+      </div>
+      <p class="hint">Default: <code>1234</code> (change in Admin → Set Passcode)</p>
+    </form>
+  </dialog>
+</</body>
