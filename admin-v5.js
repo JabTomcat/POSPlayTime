@@ -1,4 +1,4 @@
-console.log('POS PlayTime admin.js v4 - loaded');
+console.log('POS PlayTime admin.js v5- loaded');
 /* POS PlayTime – Admin page logic */
 
 // ---- Storage keys ----
@@ -13,21 +13,29 @@ if (sessionStorage.getItem(SESSION_ADMIN_KEY) !== 'true') {
 
 // ---- Default items (keep in sync with app.js DEFAULT_ITEMS) ----
 const DEFAULT_ITEMS = [
-  { id: 'fries',     emoji: '🍟', name: 'Fries',             price: 3.00, category: 'Appetizers' },
-  { id: 'sticks',    emoji: '🧀', name: 'Mozzarella Sticks', price: 4.50, category: 'Appetizers' },
-  { id: 'wings',     emoji: '🍗', name: 'Wings',             price: 6.00, category: 'Appetizers' },
-  { id: 'buns',      emoji: '🥖', name: 'Buns',              price: 3.25, category: 'Appetizers' },
-  { id: 'burger',    emoji: '🍔', name: 'Burger',            price: 6.00, category: 'Mains' },
-  { id: 'hotdog',    emoji: '🌭', name: 'Hot Dog',           price: 5.00, category: 'Mains' },
-  { id: 'pizza',     emoji: '🍕', name: 'Pizza Slice',       price: 3.50, category: 'Mains' },
-  { id: 'noodles',   emoji: '🍝', name: 'Noodles',           price: 5.50, category: 'Mains' },
-  { id: 'pop',       emoji: '🥤', name: 'Pop',               price: 1.25, category: 'Drinks' },
-  { id: 'water',     emoji: '🫗', name: 'Water',             price: 0.10, category: 'Drinks' },
-  { id: 'juice',     emoji: '🧃', name: 'Juice',             price: 1.50, category: 'Drinks' },
-  { id: 'milk',      emoji: '🥛', name: 'Milk',              price: 1.20, category: 'Drinks' },
-  { id: 'icecream',  emoji: '🍦', name: 'Ice Cream',         price: 2.50, category: 'Desserts' },
-  { id: 'cupcake',   emoji: '🧁', name: 'Cupcake',           price: 2.00, category: 'Desserts' },
-  { id: 'cookie',    emoji: '🍪', name: 'Cookie',            price: 1.50, category: 'Desserts' }
+  { id: 'fries',       emoji: '🍟', name: 'Fries',             price: 3.00, category: 'Appetizers' },
+  { id: 'sticks',      emoji: '🧀', name: 'Mozzarella Sticks', price: 4.50, category: 'Appetizers' },
+  { id: 'wings',       emoji: '🍗', name: 'Wings',             price: 6.00, category: 'Appetizers' },
+  { id: 'buns',        emoji: '🥖', name: 'Buns',              price: 3.25, category: 'Appetizers' },
+  { id: 'hashbrowns',  emoji: '🥔', name: 'Hashbrowns',        price: 2.25, category: 'Appetizers' },
+  { id: 'burger',      emoji: '🍔', name: 'Burger',            price: 6.00, category: 'Mains' },
+  { id: 'hotdog',      emoji: '🌭', name: 'Hot Dog',           price: 5.00, category: 'Mains' },
+  { id: 'pizza',       emoji: '🍕', name: 'Pizza Slice',       price: 3.50, category: 'Mains' },
+  { id: 'noodles',     emoji: '🍝', name: 'Noodles',           price: 5.50, category: 'Mains' },
+  { id: 'friedegg',    emoji: '🥚', name: 'Fried Egg',         price: 3.50, category: 'Mains' },
+  { id: 'bacon',       emoji: '🥓', name: 'Bacon',             price: 3.00, category: 'Mains' },
+  { id: 'ham',         emoji: '🍖', name: 'Ham',               price: 3.50, category: 'Mains' },
+  { id: 'pop',         emoji: '🥤', name: 'Pop',               price: 1.25, category: 'Drinks' },
+  { id: 'water',       emoji: '🫗', name: 'Water',             price: 0.10, category: 'Drinks' },
+  { id: 'juice',       emoji: '🧃', name: 'Juice',             price: 1.50, category: 'Drinks' },
+  { id: 'milk',        emoji: '🥛', name: 'Milk',              price: 1.20, category: 'Drinks' },
+  { id: 'coffee',      emoji: '☕', name: 'Coffee',            price: 1.20, category: 'Drinks' },
+  { id: 'icecream',    emoji: '🍦', name: 'Ice Cream',         price: 2.50, category: 'Desserts' },
+  { id: 'cupcake',     emoji: '🧁', name: 'Cupcake',           price: 2.00, category: 'Desserts' },
+  { id: 'cookie',      emoji: '🍪', name: 'Cookie',            price: 1.50, category: 'Desserts' },
+  { id: 'gummyb',      emoji: '🧸', name: 'Gummy Bears',       price: 3.00, category: 'Candy' },
+  { id: 'fuzzyp',      emoji: '🍑', name: 'Fuzzy Peaches',     price: 1.00, category: 'Candy' },
+  { id: 'chocolate',   emoji: '🍫', name: 'Chocolate',         price: 3.00, category: 'Candy' }
 ];
 
 // ---- Items storage helpers ----

@@ -1,6 +1,6 @@
 
 /* Service Worker for offline caching */
-const CACHE_NAME = 'posplaytime-v4';
+const CACHE_NAME = 'posplaytime-v5';
 const ASSETS = [
   'index.html',
   'styles.css',
