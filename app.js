@@ -78,6 +78,7 @@ const historyListEl = document.getElementById('historyList');
 const closeHistoryBtn = document.getElementById('closeHistoryBtn');
 const clearHistoryBtn = document.getElementById('clearHistoryBtn');
 const exportBtn = document.getElementById('exportBtn');
+const menuBtn = document.getElementById('menuBtn');
 const adminBtn = document.getElementById('adminBtn');
 const adminDialog = document.getElementById('adminDialog');
 const passcodeInput = document.getElementById('passcodeInput');
@@ -335,6 +336,7 @@ clearHistoryBtn.onclick = clearHistory;
 exportBtn.onclick = exportCSV;
 
 adminBtn.onclick = openAdminGate;
+menuBtn.onclick = () => { window.location.href = 'menu-qr.html'; };
 cancelAdminBtn.onclick = () => adminDialog.close();
 submitAdminBtn.onclick = tryUnlockAdmin;
 

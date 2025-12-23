@@ -1,3 +1,10 @@
+v1.1.0 - 12/23/2025
+- Finalized the menu
+- Created a menu button on the main POS page. This allows the order taker to present a QR code to the customer that allows them quick access to the menu on their own device.
+
+v1.0.2 - 12/17/2025
+- Updated the flavour text on the menu
+
 v1.0.1 - 12/17/2025
 - Added a Candy category
     - Gummy Bears

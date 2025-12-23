@@ -49,7 +49,7 @@ function loadItems() {
  */
 const CATEGORY_FLAVORS = {
   Appetizers: 'Perfect starters to kick off your meal.',
-  Mains: 'Hearty favorites to satisfy any appetite.',
+  Mains: 'Favourites that you came here for.',
   Drinks: 'Quench your thirst—hot or cold.',
   Desserts: 'Sweet finishes you won’t forget.',
   Candy: 'Treat yourself—share if you must!'
@@ -57,11 +57,29 @@ const CATEGORY_FLAVORS = {
 
 const ITEM_FLAVORS = {
   // Example extra descriptions:
-  coffee: 'Premium Arabica beans to perk up your day', // if you add a coffee item later
-  burger: 'Grilled to perfection with your choice of toppings',
-  wings: 'Crispy and saucy—napkins recommended',
-  icecream: 'Creamy scoop of happiness',
-  chocolate: 'Rich cocoa indulgence'
+fries: 'Crispy golden goodness, perfect for dipping',
+sticks: 'Cheesy, melty magic in every bite',
+wings: 'Saucy, spicy, finger-lickin’ fun',
+buns: 'Soft, warm clouds for your favorite fillings',
+hashbrowns: 'Crispy on the outside, cozy on the inside',
+burger: 'Stacked high with flavor and good vibes',
+hotdog: 'Classic comfort in a bun, no frills needed',
+pizza: 'A slice of happiness, straight from the oven',
+noodles: 'Twirls of tasty goodness, slurp away',
+friedegg: 'Sunny side of life on your plate',
+bacon: 'Crispy strips of pure joy',
+ham: 'Savory slices that never disappoint',
+pop: 'Fizzy fun in every sip',
+water: 'Refreshment in its purest form',
+juice: 'Fruit-powered goodness to brighten your day',
+milk: 'Smooth, creamy, and always comforting',
+coffee: 'Good stuff comes in cups',
+icecream: 'Cold, sweet dreams in a scoop',
+cupcake: 'Tiny cakes, big smiles',
+cookie: 'Bite-sized happiness with a crunch',
+gummyb: 'Chewy little bears bringing sweet cheer',
+fuzzyp: 'A peachy sip of bubbly bliss',
+chocolate: 'Rich, velvety indulgence for your soul'
 };
 
 // Optional: category icons for headers

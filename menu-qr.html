@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Share Menu — POS PlayTime</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 aria-label="Share Menu">🍽️ Share Menu</h1>
+    <div class="header-actions">
+      <a href="index.html" class="secondary">← Back</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card" style="max-width:520px;margin:2rem auto;text-align:center;grid-column: 1 / -1;">
+      <h2>Scan to open the menu</h2>
+      <p>Scan this QR from another device, or tap the QR to open the menu here.</p>
+
+      <img id="qrImg" alt="QR code linking to the menu" style="width:320px;height:320px;border:1px solid #ddd;border-radius:8px;display:block;margin:1rem auto;cursor:pointer;" />
+
+      <!-- Controls removed: Open Menu button and Download QR link -->
+
+      
+    </section>
+  </main>
+
+  <script>
+    // Build an absolute URL to menu.html that works when served or opened as a file.
+    function menuUrlForCurrentLocation() {
+      try {
+        if (location.protocol === 'file:') {
+          // file:///.../path/menu-qr.html -> base folder
+          const href = location.href;
+          return href.substring(0, href.lastIndexOf('/') + 1) + 'menu.html';
+        } else {
+          // http/https
+          const base = location.origin + location.pathname.substring(0, location.pathname.lastIndexOf('/') + 1);
+          return base + 'menu.html';
+        }
+      } catch (e) {
+        return 'menu.html';
+      }
+    }
+
+    const menuUrl = menuUrlForCurrentLocation();
+
+    // Use a free QR image generator (simple, no extra library required).
+    const qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=' + encodeURIComponent(menuUrl);
+
+    const qrImg = document.getElementById('qrImg');
+
+    qrImg.src = qrUrl;
+    qrImg.addEventListener('click', () => { window.location.href = menuUrl; });
+  </script>
+</body>
+</html>
